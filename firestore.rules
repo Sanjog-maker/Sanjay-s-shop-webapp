@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Secure default for this public portfolio copy.
+    // Add authenticated, store-scoped rules before connecting a Firebase project.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
