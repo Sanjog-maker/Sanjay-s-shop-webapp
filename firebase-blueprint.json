@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "products": {
+      "title": "Products",
+      "description": "Kirana product catalog with stock, barcode, cost, selling price and reorder limits",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "regionalName": { "type": "string" },
+        "brand": { "type": "string" },
+        "category": { "type": "string" },
+        "currentStock": { "type": "number" },
+        "minStockAlert": { "type": "number" },
+        "costPrice": { "type": "number" },
+        "sellingPrice": { "type": "number" },
+        "mrp": { "type": "number" },
+        "unit": { "type": "string" },
+        "barcode": { "type": "string" },
+        "supplier": { "type": "string" },
+        "isLooseItem": { "type": "boolean" },
+        "expiryDate": { "type": "string" },
+        "batchNumber": { "type": "string" }
+      },
+      "required": ["id", "name", "category", "currentStock", "costPrice", "sellingPrice"]
+    },
+    "sales": {
+      "title": "Sales Bills",
+      "description": "Counter transaction invoices with customer, payment modes and items",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "billNumber": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "tax": { "type": "number" },
+        "total": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "billNumber", "items", "total", "paymentMethod", "createdAt"]
+    },
+    "suppliers": {
+      "title": "Suppliers",
+      "description": "Distributor and vendor contact directory",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "contactPerson": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "leadTimeDays": { "type": "number" }
+      },
+      "required": ["id", "name", "phone"]
+    },
+    "reorders": {
+      "title": "Reorders",
+      "description": "Purchase orders and suggested restocking list",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "poNumber": { "type": "string" },
+        "supplierId": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "items", "status"]
+    },
+    "customers": {
+      "title": "Khata Customers",
+      "description": "Credit ledger and loyalty customers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "totalCredit": { "type": "number" }
+      },
+      "required": ["id", "name", "phone"]
+    }
+  }
+}
