@@ -1,0 +1,6 @@
+{
+  "name": "ShopIQ",
+  "description": "AI Retail Operating System for Indian Kirana stores featuring the ShopIQ Command Center, AI Copilot, Smart Reorder Assistant, Expiry Watch, and Multilingual Voice Billing.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
